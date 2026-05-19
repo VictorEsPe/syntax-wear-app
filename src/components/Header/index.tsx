@@ -6,9 +6,9 @@ import BagIcon from "@/assets/images/bag-icon.png";
 export function Header() {
   return (
     <div className="relative">
-      <header className="fixed bg-white top-0 left-0 right-0 z-10 mx-10">
-        <div className="max-w-[1320px] mx-auto flex 
-        justify-between items-center px-7 py-5 rounded-2xl mt-5">
+      <header className="fixed top-10 left-0 right-0 z-10 mx-10">
+        <div className="max-w-330 mx-auto flex 
+        justify-between items-center bg-white px-7 py-3 rounded-2xl mt-5">
           <img src={Logo} alt="Logo SyntaxWear" className="w-32 md:36" />
 
           <nav className="hidden md:block">
