@@ -1,0 +1,61 @@
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "highlight highlight"
+    "sneaker-white sneaker-white"
+    "model sneaker-color"
+    "model sneaker-silver"
+    "sneaker-purple sneaker-purple";
+  gap: 0.625rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    grid-template-areas:
+      "highlight highlight sneaker-purple sneaker-purple"
+      "highlight highlight model sneaker-color"
+      "sneaker-white sneaker-white model sneaker-silver";
+    gap: 30px;
+  }
+}
+
+.item {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .item {
+    border-radius: 20px;
+  }
+}
+
+.highlight {
+  grid-area: highlight;
+}
+
+.sneakerPurple {
+  grid-area: sneaker-purple;
+}
+
+.model {
+  grid-area: model;
+}
+
+.sneakerColor {
+  grid-area: sneaker-color;
+}
+
+.sneakerWhite {
+  grid-area: sneaker-white;
+}
+
+.sneakerSilver {
+  grid-area: sneaker-silver;
+}
