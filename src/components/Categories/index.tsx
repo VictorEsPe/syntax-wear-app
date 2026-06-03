@@ -20,10 +20,6 @@ export function Categories() {
             style={{backgroundImage: `url(${category.image})`}}
             className="h-125 bg-cover bg-center rounded-[20px] relative flex items-center
             justify-center text-white shrink-0 w-[90%] md:w-1/2 lg:w-full">
-                {/* <div className="absolute inset-0 bg-black/30 rounded-[20px] snap-center"></div>
-
-                <div className="relative"><Button variant="secondary">{category.name}</Button></div> */}
-
                 <Overlay className="inset-0 bg-black/30 rounded-[20px] snap-center justify-center items-center">
                     <Button variant="secondary">{category.name}</Button>
                 </Overlay>

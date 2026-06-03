@@ -2,6 +2,7 @@ import { Categories } from "./components/Categories";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Gallery } from "./components/Gallery";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Categories />
         <Gallery />
       </main>
+      <Footer />
     </>
   );
 }
