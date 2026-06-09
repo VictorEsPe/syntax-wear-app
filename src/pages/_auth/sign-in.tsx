@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LoginForm } from "../../components/LoginForm";
+import { Logo } from "../../components/Logo";
+import GoogleIcon from "@/assets/images/google-icon.png";
+import { Separator } from "../../components/Separator";
+
 
 export const Route = createFileRoute("/_auth/sign-in")({
   component: RouteComponent,
@@ -7,9 +11,39 @@ export const Route = createFileRoute("/_auth/sign-in")({
 
 function RouteComponent() {
   return (
-    <section>
-      <h1 className="text-black">Rota de login</h1>
-      <LoginForm></LoginForm>
+    <section
+      className="text-black h-screen w-full flex justify-center items-center bg-[#f5f5f5]
+    p-5"
+    >
+      <div className="w-112.5 bg-white rounded-[18px] p-10 shadow-md">
+        <div className="flex flex-col">
+          <Logo />
+
+          <h2 className="text-black font-bold text-[21px] mb-2">Entrar</h2>
+          <p className="mb-3.5">Escolha como você gostaria de fazer login</p>
+
+          <button
+            className="w-full flex items-center justify-center gap-2 border border-gray-300
+        rounded-md py-3 hover:bg-gray-50 transition cursor-pointer"
+          >
+            <img src={GoogleIcon} alt="Ícone do Google" className="w-5 h-5" />
+            <span className="text-sm font-medium text-black">
+              Continuar com o Google
+            </span>
+          </button>
+
+          <Separator />
+
+          <LoginForm />
+
+          <p className="text-sm text-gray-600 mt-6 text-center">
+          Ainda não tem uma conta?{" "}
+          <a href="/sign-up" className="text-[#5433eb] hover:underline">
+            Cadastre-se
+          </a>
+        </p>
+        </div>
+      </div>
     </section>
   );
 }

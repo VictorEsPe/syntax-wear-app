@@ -27,8 +27,7 @@ export const registerSchema = z
       ),
 
     email: z
-      .email("Email deve ser um endereço de email válido")
-      .nonempty({ message: "Email é obrigatório" }),
+      .email("Email deve ser um endereço de email válido"),
     cpf: z
       .string()
       .nonempty({ message: "CPF é obrigatório" })
@@ -36,7 +35,6 @@ export const registerSchema = z
 
     dateOfBirth: z
       .string()
-      .nonempty({ message: "Data de nascimento é obrigatória" })
       .refine(
         (date) => !isNaN(Date.parse(date)),
         "Data de nascimento inválida",
@@ -47,7 +45,14 @@ export const registerSchema = z
       .nonempty({ message: "Senha é obrigatória" })
       .min(8, "Senha deve ter no mínimo 8 caracteres"),
 
-    cellphone: z.string().nonempty({ message: "Telefone é obrigatório" }),
+    phone: z.
+    string().
+    nonempty({ message: "Telefone é obrigatório" })
+    .refine(
+        (phone) => !isNaN(parseInt(phone.replace(/\D/g, ""))) && phone.replace(/\D/g, "").length >= 10,
+        "Telefone inválido",
+      )
+    ,
 
     confirmPassword: z
       .string()
@@ -62,7 +67,7 @@ export const registerSchema = z
 type registerFormData = z.infer<typeof registerSchema>;
 
 // Configuração padrão para o useForm
-export function RegisterFormConfig (){
+export function useRegisterForm (){
   const {
     register,
     handleSubmit,
