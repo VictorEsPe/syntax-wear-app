@@ -37,7 +37,7 @@ function RouteComponent() {
           <LoginForm />
 
           <p className="text-sm text-gray-600 mt-6 text-center">
-          Ainda não tem uma conta?{" "}
+          Ainda não tem uma conta?
           <a href="/sign-up" className="text-[#5433eb] hover:underline">
             Cadastre-se
           </a>

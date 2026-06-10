@@ -81,7 +81,7 @@ export function Gallery() {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           ))}
