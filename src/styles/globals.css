@@ -50,6 +50,7 @@
 body {
   font-family: var(--font-display);
   color: #fff;
+  background-color: var(--color-surface);
 }
 
 .scrollbar-hide::-webkit-scrollbar {
