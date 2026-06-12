@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import Logo from "@/assets/images/logo.png";
 import ProfileIcon from "@/assets/images/profile-icon.png";
 import FaqIcon from "@/assets/images/faq-icon.png";
-import BagIcon from "@/assets/images/bag-icon.png";
+import { ShoppingCart } from "../ShoppingCart";
 
 export function Header() {
   return (
@@ -49,9 +49,7 @@ export function Header() {
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src={BagIcon} alt="Products" />
-                </a>
+                <ShoppingCart />
               </li>
             </ul>
           </nav>
