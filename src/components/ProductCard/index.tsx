@@ -2,15 +2,22 @@ import { Link } from "@tanstack/react-router";
 import type { Product } from "../../interfaces/product";
 import { MdAddShoppingCart } from "react-icons/md";
 import { formatCurrency } from "../../utils/currency-format";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const { add } = useContext(CartContext);
+
   return (
     <div className="bg-white rounded-2xl shadow-md">
-      <Link to="/products/$productId" params={{ productId: String(product.id) }}>
+      <Link
+        to="/products/$productId"
+        params={{ productId: String(product.id) }}
+      >
         <img
           src={product.image}
           alt={product.name}
@@ -25,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="flex justify-between mt-2.5">
           <p className="font-bold">{formatCurrency(product.price)}</p>
 
-          <button className="cursor-pointer">
+          <button className="cursor-pointer" onClick={() => add(product)}>
             <MdAddShoppingCart className="w-7 h-7" />
           </button>
         </div>

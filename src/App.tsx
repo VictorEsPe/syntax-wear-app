@@ -1,5 +1,7 @@
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./router-tree-gen";
+import { CartProvider } from "./contexts/CartProvider";
+
 
 /**
  * CONFIGURAÇÃO DO ROUTER (App.tsx)
@@ -31,7 +33,11 @@ declare module "@tanstack/react-router" {
  * Ele permite que componentes acessem o router e façam navegação
  */
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />;
+    </CartProvider>
+  )
 }
 
 export default App;
