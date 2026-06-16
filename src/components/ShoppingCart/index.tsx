@@ -6,15 +6,24 @@ import { CartContext } from "../../contexts/CartContext";
 
 export function ShoppingCart() {
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
-  const { cart, remove ,increment, decrement } = useContext(CartContext)
+  const { cart, remove, increment, decrement } = useContext(CartContext);
+
+  const totalItems = Array.isArray(cart) 
+    ? cart.reduce((total, item) => total + item.quantity, 0)
+    : 0;
 
   return (
     <>
       <button
-        className="cursor-pointer"
+        className="relative cursor-pointer"
         onClick={() => setCartIsOpen(!cartIsOpen)}
       >
         <img src={IconBag} alt="Ícone do carrinho de compras" />
+        {totalItems > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+            {totalItems}
+          </span>
+        )}
       </button>
 
       <div

@@ -10,4 +10,10 @@ interface CartContextType {
     decrement: (product: ProductCart) => void,
 }
 
-export const CartContext = createContext({} as CartContextType)
+export const CartContext = createContext<CartContextType>({
+    cart: [],
+    add: () => {},
+    remove: () => {},
+    increment: () => {},
+    decrement: () => {},
+})

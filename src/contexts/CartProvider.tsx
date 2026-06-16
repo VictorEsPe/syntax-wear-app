@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Product } from "../interfaces/product";
 import { CartContext } from "./CartContext";
 
@@ -10,8 +10,25 @@ export interface ProductCart extends Product {
   quantity: number;
 }
 
+const localStorageKey = "@SyntaxWear:cart"
+
 export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<ProductCart[]>([]);
+  const [cart, setCart] = useState<ProductCart[]>(() => {
+    try {
+      const cartFromLocalStorage = localStorage.getItem(localStorageKey);
+      if (cartFromLocalStorage) {
+        const parsed = JSON.parse(cartFromLocalStorage);
+        return Array.isArray(parsed) ? parsed : [];
+      }
+    } catch (error) {
+      console.error("Erro ao carregar o carrinho do localStorage:", error);
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, JSON.stringify(cart))
+  }, [cart])
 
   function add(product: Product): void {
     // verifica se o produdo adicionado já existe no carrinho
