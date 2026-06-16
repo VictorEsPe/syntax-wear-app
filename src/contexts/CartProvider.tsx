@@ -79,7 +79,11 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function decrement(product: ProductCart): void {
-    updateProductQuantity(product, product.quantity - 1)
+    if (product.quantity === 1) {
+      remove(product.id);
+    } else {
+      updateProductQuantity(product, product.quantity - 1);
+    }
   }
 
   return (
