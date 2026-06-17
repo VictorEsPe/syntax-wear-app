@@ -33,7 +33,7 @@ export function Header() {
           <nav>
             <ul className="flex gap-4 md:gap-10">
               <li className="hidden md:block">
-                <a href="#">Nossas lojas</a>
+                <Link to="/our-stores">Nossas lojas</Link>
               </li>
               <li className="hidden md:block">
                 <a href="#">Sobre</a>
