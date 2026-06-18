@@ -36,7 +36,7 @@ export function Header() {
                 <Link to="/our-stores">Nossas lojas</Link>
               </li>
               <li className="hidden md:block">
-                <a href="#">Sobre</a>
+                <Link to="/about">Sobre</Link>
               </li>
               <li>
                 <Link to="/sign-in">
