@@ -50,7 +50,6 @@ export function Header() {
               <li className="lg:hidden">
                 <MenuMobile navLinks={navLinks}/>
               </li>
-
               <li className="hidden lg:block">
                 <Link to="/sign-in">
                   <img src={ProfileIcon} alt="Profile" />

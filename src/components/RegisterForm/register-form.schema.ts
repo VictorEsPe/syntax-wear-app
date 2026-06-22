@@ -26,8 +26,8 @@ export const registerSchema = z
         "Último nome deve conter apenas letras",
       ),
 
-    email: z
-      .email("Email deve ser um endereço de email válido"),
+    email: z.email("Email deve ser um endereço de email válido"),
+    
     cpf: z
       .string()
       .nonempty({ message: "CPF é obrigatório" })
@@ -45,15 +45,15 @@ export const registerSchema = z
       .nonempty({ message: "Senha é obrigatória" })
       .min(8, "Senha deve ter no mínimo 8 caracteres"),
 
-    phone: z.
-    string().
-    nonempty({ message: "Telefone é obrigatório" })
-    .refine(
-        (phone) => !isNaN(parseInt(phone.replace(/\D/g, ""))) && phone.replace(/\D/g, "").length >= 10,
+    phone: z
+      .string()
+      .nonempty({ message: "Telefone é obrigatório" })
+      .refine(
+        (phone) =>
+          !isNaN(parseInt(phone.replace(/\D/g, ""))) &&
+          phone.replace(/\D/g, "").length >= 10,
         "Telefone inválido",
-      )
-    ,
-
+      ),
     confirmPassword: z
       .string()
       .nonempty({ message: "Confirmação de senha é obrigatória" }),
@@ -67,7 +67,7 @@ export const registerSchema = z
 type registerFormData = z.infer<typeof registerSchema>;
 
 // Configuração padrão para o useForm
-export function useRegisterForm (){
+export function useRegisterForm() {
   const {
     register,
     handleSubmit,
@@ -78,8 +78,8 @@ export function useRegisterForm (){
     resolver: zodResolver(registerSchema),
     mode: "onBlur",
     defaultValues: {
-        email: "",
-        password: ""
+      email: "",
+      password: "",
     },
     criteriaMode: "all",
   });
@@ -91,5 +91,5 @@ export function useRegisterForm (){
     isSubmitting,
     setError,
     reset,
-  }
-};
+  };
+}
