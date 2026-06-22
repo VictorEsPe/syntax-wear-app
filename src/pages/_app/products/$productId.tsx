@@ -9,8 +9,8 @@ export const Route = createFileRoute("/_app/products/$productId")({
   component: RouteComponent,
 });
 
-function RouteComponent() { 
-  const {add} = useContext(CartContext)
+function RouteComponent() {
+  const { add } = useContext(CartContext);
 
   const { productId } = Route.useParams();
 
@@ -18,7 +18,21 @@ function RouteComponent() {
     (product) => product.id === Number(productId),
   );
 
-  if(!filteredProduct) return
+  if (!filteredProduct)
+    return (
+      <section className="container mb-10 pt-44 md:pt-54 pb-10 md:px-10 text-center text-black min-h-[80vh] flex flex-col items-center justify-center">
+        <h1 className="text-3xl font-bold mb-4">Produto não encontrado</h1>
+        <p className="mb-6">
+          A página que você está procurando não existe ou foi removido.
+        </p>
+        <Link
+          to="/products"
+          className="text-accent hover:text-accent-hover underline"
+        >
+          Voltar para os produtos
+        </Link>
+      </section>
+    );
 
   const originalPrice = filteredProduct?.price ?? 0;
   const discountPrice = originalPrice * 0.9;
@@ -70,8 +84,11 @@ function RouteComponent() {
 
             <CEPForm />
           </div>
-          
-          <button className="bg-black text-white rounded-md p-5 w-full cursor-pointer" onClick={() => add(filteredProduct)}>
+
+          <button
+            className="bg-black text-white rounded-md p-5 w-full cursor-pointer"
+            onClick={() => add(filteredProduct)}
+          >
             Adicionar ao carrinho
           </button>
         </div>
