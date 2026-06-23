@@ -2,7 +2,6 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./router-tree-gen";
 import { CartProvider } from "./contexts/CartProvider";
 
-
 /**
  * CONFIGURAÇÃO DO ROUTER (App.tsx)
  *
@@ -35,9 +34,9 @@ declare module "@tanstack/react-router" {
 function App() {
   return (
     <CartProvider>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </CartProvider>
-  )
+  );
 }
 
 export default App;

@@ -59,7 +59,7 @@ function RouteComponent() {
         <span className="font-semibold">{filteredProduct?.name}</span>
       </nav>
 
-      <div className="flex justify-center gap-10">
+      <div className="flex flex-col items-center lg:flex-row justify-center gap-10">
         <img
           src={filteredProduct?.image}
           alt={filteredProduct?.name}
