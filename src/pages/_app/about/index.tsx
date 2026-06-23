@@ -3,6 +3,9 @@ import BannerAbout from "@/assets/images/about.jpg";
 
 export const Route = createFileRoute("/_app/about/")({
   component: RouteComponent,
+   head: () => ({
+    meta: [{ title: "Sobre nós - Syntax Wear" }],
+  }),
 });
 
 function RouteComponent() {

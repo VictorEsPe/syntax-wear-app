@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Outlet, createRootRoute } from "@tanstack/react-router";
 
 /**
  * ARQUIVO RAIZ (__root.tsx)
@@ -13,6 +13,9 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 export const Route = createRootRoute({
   // O 'component' é o componente React que será renderizado para esta rota
   component: RootComponent,
+  head: () => ({
+    meta: [{ title: "Início - Syntax Wear" }],
+  }),
 });
 
 /**
@@ -25,6 +28,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <React.Fragment>
+      <HeadContent />
       {/* <Outlet /> renderiza aqui o conteúdo da rota filha ativa */}
       <Outlet />
     </React.Fragment>
