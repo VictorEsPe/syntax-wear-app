@@ -15,10 +15,10 @@ export function RegisterForm() {
           type="text"
           {...register("firstName")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.firstName ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.firstName ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.firstName && (
-          <p className="text-red-600 text-xs mt-1">
+          <p className="text-error text-xs mt-1">
             {errors.firstName.message}
           </p>
         )}
@@ -34,10 +34,10 @@ export function RegisterForm() {
           type="text"
           {...register("lastName")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.lastName ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.lastName ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.lastName && (
-          <p className="text-red-600 text-xs mt-1">{errors.lastName.message}</p>
+          <p className="text-error text-xs mt-1">{errors.lastName.message}</p>
         )}
       </div>
 
@@ -51,10 +51,10 @@ export function RegisterForm() {
           type="email"
           {...register("email")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.email ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.email ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.email && (
-          <p className="text-red-600 text-xs mt-1">{errors.email.message}</p>
+          <p className="text-error text-xs mt-1">{errors.email.message}</p>
         )}
       </div>
 
@@ -68,10 +68,10 @@ export function RegisterForm() {
           type="text"
           {...register("cpf")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.cpf ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.cpf ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.cpf && (
-          <p className="text-red-600 text-xs mt-1">{errors.cpf.message}</p>
+          <p className="text-error text-xs mt-1">{errors.cpf.message}</p>
         )}
       </div>
 
@@ -85,10 +85,10 @@ export function RegisterForm() {
           type="date"
           {...register("dateOfBirth")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.dateOfBirth ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.dateOfBirth ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.dateOfBirth && (
-          <p className="text-red-600 text-xs mt-1">
+          <p className="text-error text-xs mt-1">
             {errors.dateOfBirth.message}
           </p>
         )}
@@ -104,10 +104,10 @@ export function RegisterForm() {
           type="tel"
           {...register("phone")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.phone ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.phone ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.phone && (
-          <p className="text-red-600 text-xs mt-1">{errors.phone.message}</p>
+          <p className="text-error text-xs mt-1">{errors.phone.message}</p>
         )}
       </div>
 
@@ -121,10 +121,10 @@ export function RegisterForm() {
           type="password"
           {...register("password")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.password ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.password ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.password && (
-          <p className="text-red-600 text-xs mt-1">{errors.password.message}</p>
+          <p className="text-error text-xs mt-1">{errors.password.message}</p>
         )}
       </div>
 
@@ -138,10 +138,10 @@ export function RegisterForm() {
           type="password"
           {...register("confirmPassword")}
           className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2
-                    ${errors.confirmPassword ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-[#5433eb]"}`}
+                    ${errors.confirmPassword ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
         />
         {errors.confirmPassword && (
-          <p className="text-red-600 text-xs mt-1">
+          <p className="text-error text-xs mt-1">
             {errors.confirmPassword.message}
           </p>
         )}
@@ -149,8 +149,8 @@ export function RegisterForm() {
 
       <button
         disabled={isSubmitting}
-        className="bg-[#5433EB] text-white font-semibold uppercase rounded-md mt-4 py-3 transition-all
-      hover:bg-[#4028c7] disabled:opacity-50 w-full cursor-pointer"
+        className="bg-accent text-white font-semibold uppercase rounded-md mt-4 py-3 transition-all
+      hover:bg-accent-hover disabled:opacity-50 w-full cursor-pointer"
       >
         {isSubmitting ? "Enviando..." : "Continuar"}
       </button>

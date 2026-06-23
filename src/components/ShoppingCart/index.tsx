@@ -20,7 +20,7 @@ export function ShoppingCart() {
       >
         <img src={IconBag} alt="Ícone do carrinho de compras" />
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+          <span className="absolute -top-2 -right-2 bg-error text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
             {totalItems}
           </span>
         )}

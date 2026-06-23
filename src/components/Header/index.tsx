@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import Logo from "@/assets/images/logo.png";
 import ProfileIcon from "@/assets/images/profile-icon.png";
-import FaqIcon from "@/assets/images/faq-icon.png";
 import { ShoppingCart } from "../ShoppingCart";
 import { MenuMobile } from "../MenuMobile";
 

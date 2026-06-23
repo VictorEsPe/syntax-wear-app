@@ -3,6 +3,7 @@ import { LoginForm } from "../../components/LoginForm";
 import { Logo } from "../../components/Logo";
 import GoogleIcon from "@/assets/images/google-icon.png";
 import { Separator } from "../../components/Separator";
+import { Link } from "@tanstack/react-router";
 
 
 export const Route = createFileRoute("/_auth/sign-in")({
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/_auth/sign-in")({
 function RouteComponent() {
   return (
     <section
-      className="text-black h-screen w-full flex justify-center items-center bg-[#f5f5f5]
+      className="text-black h-screen w-full flex justify-center items-center bg-surface
     p-5"
     >
       <div className="w-112.5 bg-white rounded-[18px] p-10 shadow-md">
@@ -40,10 +41,10 @@ function RouteComponent() {
           <LoginForm />
 
           <p className="text-sm text-gray-600 mt-6 text-center">
-          Ainda não tem uma conta?
-          <a href="/sign-up" className="text-[#5433eb] hover:underline">
+          Ainda não tem uma conta? {" "}
+          <Link to="/sign-up" className="text-accent hover:underline">
             Cadastre-se
-          </a>
+          </Link>
         </p>
         </div>
       </div>

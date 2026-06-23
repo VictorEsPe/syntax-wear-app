@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { RegisterForm } from "../../components/RegisterForm";
 import { Logo } from "../../components/Logo";
 import { Separator } from "../../components/Separator";
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/_auth/sign-up")({
 
 function RouteComponent() {
   return (
-    <section className="min-h-screen w-full flex justify-center items-center bg-[#f5f5f5]
+    <section className="min-h-screen w-full flex justify-center items-center bg-surface
     p-5">
       <div className="w-112.5 bg-white rounded-2xl p-5 flex flex-col">
         <Logo />
@@ -21,7 +21,7 @@ function RouteComponent() {
         <Separator />
 
         <button
-          className="w-full flex items-center justify-center gap-2 border border-gray-300
+          className="w-full flex items-center justify-center gap-2 border border-border
         rounded-md py-3 hover:bg-gray-50 transition cursor-pointer"
         >
           <img src={GoogleIcon} alt="Ícone do Google" className="w-5 h-5" />
@@ -30,11 +30,11 @@ function RouteComponent() {
           </span>
         </button>
         
-        <p className="text-sm text-gray-600 mt-6 text-center">
-          Já tem uma conta?
-          <a href="/sign-in" className="text-[#5433eb] hover:underline">
+        <p className="text-sm text-gray-text mt-6 text-center">
+          Já tem uma conta? {" "}
+          <Link to="/sign-in" className="text-accent hover:underline">
             Entrar
-          </a>
+          </ Link>
         </p>
       </div>
     </section>

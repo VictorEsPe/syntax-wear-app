@@ -20,7 +20,7 @@ export function MenuItems() {
         <nav key={title}>
           <ul className="flex flex-col gap-4">
             <li>
-              <p className="font-normal text-[#EDEDED] text-xl">{title}</p>
+              <p className="font-normal text-text-tertiary text-xl">{title}</p>
             </li>
 
             {items.map((item) => (

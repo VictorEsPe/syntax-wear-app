@@ -56,7 +56,7 @@ export function CEPForm() {
           <input
             type="text"
             placeholder="Insira seu CEP"
-            className={`border border-[#c0c0c0] rounded-md p-3 flex-1 text-black
+            className={`border border-border rounded-md p-3 flex-1 text-black
             ${errors.cep ? "border-error" : ""}`}
             {...register("cep")}
           />
